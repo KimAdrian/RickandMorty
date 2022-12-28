@@ -1,4 +1,4 @@
-package com.kimadrian.rickandmorty.data.model
+package com.kimadrian.rickandmorty.data.model.characters
 
 data class Result(
     val created: String,
