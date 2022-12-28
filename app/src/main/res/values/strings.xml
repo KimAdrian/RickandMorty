@@ -2,4 +2,13 @@
     <string name="app_name">RickandMorty</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="alive">Alive</string>
+    <string name="species">Species</string>
+    <string name="dash">-</string>
+    <string name="last_known_location">Last known location:</string>
+    <string name="last_location">Last location</string>
+    <string name="first_seen_in">First seen in:</string>
+    <string name="first_seen">First seen</string>
+    <string name="character_image">Character Image</string>
 </resources>
