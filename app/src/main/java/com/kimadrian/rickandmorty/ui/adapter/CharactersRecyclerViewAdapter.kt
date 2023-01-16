@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kimadrian.rickandmorty.R
 import com.kimadrian.rickandmorty.data.model.characters.Result
-import com.kimadrian.rickandmorty.utils.CharacterStatus
+import com.kimadrian.rickandmorty.utils.CharacterStatusColor
 
 class CharactersRecyclerViewAdapter: ListAdapter<Result, CharacterViewHolder>(DiffCallback){
 
@@ -33,7 +33,7 @@ class CharactersRecyclerViewAdapter: ListAdapter<Result, CharacterViewHolder>(Di
             .error(R.drawable.ic_broken_image)
             .centerCrop()
             .into(holder.characterImage)
-        holder.characterStatusColor.setCardBackgroundColor(CharacterStatus.statusColor(character.status))
+        holder.characterStatusColor.setCardBackgroundColor(CharacterStatusColor.statusColor(character.status))
 
     }
 
