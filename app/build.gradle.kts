@@ -75,6 +75,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:${hiltVersion}")
     kapt("com.google.dagger:hilt-compiler:${hiltVersion}")
 
+    //Timber
+    implementation("com.jakewharton.timber:timber:5.0.1")
+
 }
 
 // Allow references to generated code
