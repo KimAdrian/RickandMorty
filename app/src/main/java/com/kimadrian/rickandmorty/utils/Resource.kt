@@ -1,4 +1,4 @@
-package com.kimadrian.newsapp.utils
+package com.kimadrian.rickandmorty.utils
 
 data class Resource<out T> (
     val status: Status,

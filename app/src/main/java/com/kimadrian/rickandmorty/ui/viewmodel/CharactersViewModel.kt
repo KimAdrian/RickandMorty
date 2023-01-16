@@ -1,7 +1,7 @@
 package com.kimadrian.rickandmorty.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.kimadrian.newsapp.utils.Resource
+import com.kimadrian.rickandmorty.utils.Resource
 import com.kimadrian.rickandmorty.data.repository.Repository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
