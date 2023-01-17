@@ -62,7 +62,7 @@ class CharactersFragment : Fragment() {
                             binding.progressBar.visibility = View.GONE
                             binding.recyclerView.visibility = View.GONE
                             binding.errorImage.visibility = View.VISIBLE
-                            Snackbar.make(binding.root, "${resource.message}", Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(binding.root, "Something went wrong", Snackbar.LENGTH_LONG).show()
                             Timber.e(resource.message)
                         }
                     }
