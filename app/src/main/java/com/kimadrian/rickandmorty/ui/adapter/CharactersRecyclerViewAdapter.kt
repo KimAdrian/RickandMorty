@@ -27,6 +27,7 @@ class CharactersRecyclerViewAdapter: ListAdapter<Result, CharacterViewHolder>(Di
         holder.characterName.text = character.name
         holder.characterStatus.text = character.status
         holder.characterSpecies.text = character.species
+        holder.characterLocation.text = character.location.name
         Glide.with(holder.characterImage)
             .load(character.image)
             .placeholder(R.drawable.loading_animation)
@@ -55,4 +56,5 @@ class CharacterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val characterStatus: TextView = itemView.findViewById(R.id.characterStatus)
     val characterSpecies: TextView = itemView.findViewById(R.id.characterSpecies)
     val characterStatusColor: CardView = itemView.findViewById(R.id.statusColor)
+    val characterLocation: TextView = itemView.findViewById(R.id.characterLocation)
 }
