@@ -66,10 +66,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:${navigationVersion}")
     implementation("androidx.navigation:navigation-ui-ktx:${navigationVersion}")
 
-    //Lifecycle-livedata
-    val lifecycleLivedataVersion = "2.5.1"
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${lifecycleLivedataVersion}")
-
     //Hilt
     val hiltVersion = "2.44"
     implementation("com.google.dagger:hilt-android:${hiltVersion}")
