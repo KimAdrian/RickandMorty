@@ -1,25 +1,22 @@
 package com.kimadrian.rickandmorty.ui.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.kimadrian.rickandmorty.R
 import com.kimadrian.rickandmorty.data.repository.Repository
 import com.kimadrian.rickandmorty.databinding.FragmentCharactersBinding
 import com.kimadrian.rickandmorty.ui.adapter.CharactersRecyclerViewAdapter
 import com.kimadrian.rickandmorty.ui.viewmodel.CharactersViewModel
 import com.kimadrian.rickandmorty.ui.viewmodel.CharactersViewModelFactory
 import com.kimadrian.rickandmorty.utils.Status
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.observeOn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class CharactersFragment : Fragment() {
