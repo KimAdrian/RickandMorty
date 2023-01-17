@@ -11,4 +11,5 @@
     <string name="first_seen_in">First seen in:</string>
     <string name="first_seen">First seen</string>
     <string name="character_image">Character Image</string>
+    <string name="error_image">Error image</string>
 </resources>
