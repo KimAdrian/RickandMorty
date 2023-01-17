@@ -74,6 +74,9 @@ dependencies {
     //Timber
     implementation("com.jakewharton.timber:timber:5.0.1")
 
+    //SplashScreen
+    implementation ("androidx.core:core-splashscreen:1.0.0")
+
 }
 
 // Allow references to generated code
