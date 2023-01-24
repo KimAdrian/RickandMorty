@@ -81,6 +81,10 @@ dependencies {
     val pagingVersion = "3.1.1"
     implementation("androidx.paging:paging-runtime:$pagingVersion")
 
+    //Shimmer
+    val shimmerVersion = "0.5.0"
+    implementation ("com.facebook.shimmer:shimmer:$shimmerVersion")
+
 }
 
 // Allow references to generated code

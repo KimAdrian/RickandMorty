@@ -49,11 +49,11 @@ class CharactersFragment : Fragment() {
 
             if (loadState.refresh is LoadState.Loading){
                 if (adapter.snapshot().isEmpty()){
-                    binding.progressBar.visibility = View.VISIBLE
+                    binding.shimmer.startShimmer()
                 }
-                binding.errorImage.visibility = View.GONE
             } else {
-                binding.progressBar.visibility = View.GONE
+                binding.shimmer.stopShimmer()
+                binding.shimmer.visibility = View.GONE
                 val error = when {
                     loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
                     loadState.append is LoadState.Error -> loadState.append as LoadState.Error
@@ -63,7 +63,8 @@ class CharactersFragment : Fragment() {
 
                 error?.let {
                     if (adapter.snapshot().isEmpty()) {
-                        binding.errorImage.visibility = View.GONE
+                        binding.errorImage.visibility = View.VISIBLE
+                        binding.recyclerView.visibility = View.GONE
                         Snackbar.make(binding.root, "Something went wrong. Check your internet connection", Snackbar.LENGTH_LONG).show()
                     }
                     Timber.e(it.error.message)
