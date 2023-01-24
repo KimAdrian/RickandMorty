@@ -6,15 +6,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.kimadrian.rickandmorty.R
 import com.kimadrian.rickandmorty.data.model.characters.Result
 import com.kimadrian.rickandmorty.utils.CharacterStatusColor
 
-class CharactersRecyclerViewAdapter: ListAdapter<Result, CharacterViewHolder>(DiffCallback){
+class CharactersRecyclerViewAdapter: PagingDataAdapter<Result, CharacterViewHolder>(DiffCallback){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,17 +25,18 @@ class CharactersRecyclerViewAdapter: ListAdapter<Result, CharacterViewHolder>(Di
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val character = getItem(position)
-        holder.characterName.text = character.name
-        holder.characterStatus.text = character.status
-        holder.characterSpecies.text = character.species
-        holder.characterLocation.text = character.location.name
+        holder.characterName.text = character?.name
+        holder.characterStatus.text = character?.status
+        holder.characterSpecies.text = character?.species
+        holder.characterLocation.text = character?.location?.name
         Glide.with(holder.characterImage)
-            .load(character.image)
+            .load(character?.image)
             .placeholder(R.drawable.loading_animation)
             .error(R.drawable.ic_broken_image)
             .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .into(holder.characterImage)
-        holder.characterStatusColor.setCardBackgroundColor(CharacterStatusColor.statusColor(character.status))
+        holder.characterStatusColor.setCardBackgroundColor(CharacterStatusColor.statusColor(character!!.status))
 
     }
 

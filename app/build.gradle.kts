@@ -77,6 +77,10 @@ dependencies {
     //SplashScreen
     implementation ("androidx.core:core-splashscreen:1.0.0")
 
+    //Paging
+    val pagingVersion = "3.1.1"
+    implementation("androidx.paging:paging-runtime:$pagingVersion")
+
 }
 
 // Allow references to generated code

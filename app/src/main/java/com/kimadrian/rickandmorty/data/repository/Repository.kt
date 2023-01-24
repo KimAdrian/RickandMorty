@@ -1,11 +1,18 @@
 package com.kimadrian.rickandmorty.data.repository
 
-import com.kimadrian.rickandmorty.data.network.RetrofitInstance
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.kimadrian.rickandmorty.data.model.characters.Result
+import kotlinx.coroutines.flow.Flow
 
 class Repository {
-    suspend fun getCharacters() = RetrofitInstance.apiService.getCharacter()
-
-    suspend fun getEpisodes() = RetrofitInstance.apiService.getEpisode()
-
-    suspend fun getLocations() = RetrofitInstance.apiService.getLocation()
+    fun getCharacters(): Flow<PagingData<Result>> {
+        return Pager(
+            config = PagingConfig(pageSize = 20, enablePlaceholders = false),
+            pagingSourceFactory = {
+                PagingDataSource()
+            }
+        ).flow
+    }
 }
