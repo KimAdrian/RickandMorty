@@ -1,3 +1,6 @@
+buildscript {
+    val compose_ui_version by extra("1.3.1")
+}
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id ("com.android.application") version "7.4.0" apply false

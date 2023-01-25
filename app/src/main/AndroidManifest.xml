@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--Required when targeting android 13 but not used in project-->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Required when targeting android 13 but not used in project -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.view.CharacterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_character"
+            android:theme="@style/Theme.App.Starting" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
