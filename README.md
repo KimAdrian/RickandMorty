@@ -1,4 +1,5 @@
 ![Build](https://github.com/KimAdrian/RickandMorty/actions/workflows/build.yml/badge.svg)
+## ⚠️: This project is currently being migrated to jetpack compose🏗️
 <p align="center">
 <img src="images/logo2.png" height=150px width=150px alt ="newsLogo"/>
 </p>
