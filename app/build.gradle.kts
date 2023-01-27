@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0"
+        kotlinCompilerExtensionVersion = "1.3.1"
     }
     packagingOptions {
         resources {
@@ -51,6 +51,7 @@ android {
 
 dependencies {
 
+    val composeVersion = "1.3.1"
     implementation ("androidx.core:core-ktx:1.9.0")
     implementation ("androidx.appcompat:appcompat:1.5.1")
     implementation ("com.google.android.material:material:1.7.0")
@@ -71,6 +72,10 @@ dependencies {
     val glideVersion = "4.13.2"
     implementation("com.github.bumptech.glide:glide:${glideVersion}")
     kapt("com.github.bumptech.glide:compiler:${glideVersion}")
+
+    //Landscapist
+    val landscapistVersion = "2.1.1"
+    implementation("com.github.skydoves:landscapist-glide:$landscapistVersion")
 
     //Retrofit
     val retrofitVersion = "2.9.0"
@@ -100,6 +105,7 @@ dependencies {
     //Paging
     val pagingVersion = "3.1.1"
     implementation("androidx.paging:paging-runtime:$pagingVersion")
+    implementation("androidx.paging:paging-compose:1.0.0-alpha17")
 
     //Shimmer
     val shimmerVersion = "0.5.0"

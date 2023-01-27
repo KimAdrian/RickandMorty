@@ -10,12 +10,16 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.viewbinding.BuildConfig
 import com.kimadrian.rickandmorty.ui.view.ui.theme.RickandMortyTheme
-import org.w3c.dom.Text
+import timber.log.Timber
 
 class CharacterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (BuildConfig.DEBUG){
+            Timber.plant(Timber.DebugTree())
+        }
         setContent {
             RickandMortyTheme {
                 // A surface container using the 'background' color from the theme
