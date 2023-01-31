@@ -1,3 +1,9 @@
+/**
+ * Custom shimmer animation
+ * Won't be used due to performance issues,
+ * shimmer Library [https://github.com/valentinilk/compose-shimmer] will be used instead
+ */
+
 package com.kimadrian.rickandmorty.ui.view.custom
 
 import androidx.compose.animation.core.*
