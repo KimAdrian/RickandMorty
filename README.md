@@ -17,10 +17,14 @@ Min Api Level: 21 [Android 5.0](https://developer.android.com/studio/releases/pl
 
 Build System : [Kotlin KTS](https://developer.android.com/studio/build/migrate-to-kts)
 
+>**Note**: This project has two branches:
+> - [compose-main](https://github.com/KimAdrian/RickandMorty/tree/compose-main) - uses jetpack compose
+> - [xml-main](https://github.com/KimAdrian/RickandMorty/tree/xml-main) - uses xml
+
 ## Screenshots
 
-| <img src="images/splashscreen.jpg"/> | <img src="images/loading_shimmer.jpg"/> | <img src="images/home.jpg"/> |<img src="images/error.jpg"/>|
-|---|---|---|---|
+| <img src="images/splashscreen.jpg"/> | <img src="images/loading_shimmer.jpg"/> | <img src="images/home.jpg"/> | <img src="images/error.jpg"/> |
+|--------------------------------------|-----------------------------------------|------------------------------|-------------------------------|
 
 ## Setup Guide
 
@@ -32,6 +36,6 @@ Build System : [Kotlin KTS](https://developer.android.com/studio/build/migrate-t
 - [Retrofit2](https://square.github.io/retrofit/) : A type-safe HTTP client for Android and Java.
 - [Timber](https://github.com/JakeWharton/timber) : A logger with a small, extensible API which provides utility on top of Android's normal Log class.
 - [Moshi](https://github.com/square/moshi) : A modern JSON library for Android, Java and Kotlin. It makes it easy to parse JSON into Java and Kotlin classes.
-- [Glide](https://github.com/bumptech/glide) : A fast and efficient open source media management and image loading framework.
+- [Coil](https://github.com/coil-kt/coil) : An image loading library for Android backed by Kotlin Coroutines.
 - [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) : The Paging library helps you load and display pages of data from a larger dataset from local storage or over network.
-- [Shimmer](https://github.com/facebook/shimmer-android) : an Android library that provides an easy way to add a shimmer effect to any view in your Android app.
+- [Shimmer](https://github.com/valentinilk/compose-shimmer) : an Android library that provides an easy way to add a shimmer effect to any view in your Android app.
