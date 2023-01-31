@@ -103,8 +103,8 @@ dependencies {
     implementation("androidx.paging:paging-compose:1.0.0-alpha17")
 
     //Shimmer
-    val shimmerVersion = "0.5.0"
-    implementation ("com.facebook.shimmer:shimmer:$shimmerVersion")
+    val shimmerVersion = "1.0.4"
+    implementation("com.valentinilk.shimmer:compose-shimmer:$shimmerVersion")
 
 }
 
