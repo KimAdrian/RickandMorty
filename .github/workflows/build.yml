@@ -2,9 +2,13 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - compose-main
+      - xml-main
   pull_request:
-    branches: [ main ]
+    branches:
+      - compose-main
+      - xml-main
 
 jobs:
   build:
