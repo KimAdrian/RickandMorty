@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.kimadrian.rickandmorty.R
 import com.kimadrian.rickandmorty.data.model.characters.Result
-import com.kimadrian.rickandmorty.utils.CharacterStatusColor
 
 class CharactersRecyclerViewAdapter: PagingDataAdapter<Result, CharacterViewHolder>(DiffCallback){
 
@@ -36,7 +35,7 @@ class CharactersRecyclerViewAdapter: PagingDataAdapter<Result, CharacterViewHold
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .into(holder.characterImage)
-        holder.characterStatusColor.setCardBackgroundColor(CharacterStatusColor.statusColor(character!!.status))
+       // holder.characterStatusColor.setCardBackgroundColor(CharacterStatusColor.statusColor(character!!.status))
 
     }
 
