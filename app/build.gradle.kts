@@ -68,14 +68,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:${rootProject.extra["compose_ui_version"]}")
     debugImplementation("androidx.compose.ui:ui-test-manifest:${rootProject.extra["compose_ui_version"]}")
 
-    //Glide
-    val glideVersion = "4.13.2"
-    implementation("com.github.bumptech.glide:glide:${glideVersion}")
-    kapt("com.github.bumptech.glide:compiler:${glideVersion}")
-
-    //Landscapist
-    val landscapistVersion = "2.1.1"
-    implementation("com.github.skydoves:landscapist-glide:$landscapistVersion")
+    //Coil
+    val coilVersion = "2.2.2"
+    implementation("io.coil-kt:coil-compose:$coilVersion")
 
     //Retrofit
     val retrofitVersion = "2.9.0"
