@@ -2,14 +2,16 @@ package com.kimadrian.rickandmorty.ui.view.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
+    primary = ColorCard,
     primaryVariant = Purple700,
-    secondary = Teal200
+    secondary = Teal200,
+    background = BackgroundColor
 )
 
 private val LightColorPalette = lightColors(
@@ -29,11 +31,7 @@ private val LightColorPalette = lightColors(
 
 @Composable
 fun RickandMortyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+    DarkColorPalette
 
     MaterialTheme(
         colors = colors,
