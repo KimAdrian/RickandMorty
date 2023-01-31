@@ -7,12 +7,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Snackbar
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -59,12 +58,19 @@ class CharacterActivity : ComponentActivity() {
             viewModel = ViewModelProvider(this, viewModelFactory)[CharactersViewModel::class.java]
             val characters = viewModel.getCharacters().collectAsLazyPagingItems(Dispatchers.IO)
             RickandMortyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
+                val scaffoldState = rememberScaffoldState()
+                Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    color = BackgroundColor
-                ) {
-                    MyApp(characters)
+                    scaffoldState =scaffoldState,
+                ) { padding ->
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(padding),
+                        color = BackgroundColor
+                    ) {
+                        MyApp(characters, scaffoldState.snackbarHostState)
+                    }
                 }
             }
         }
@@ -73,7 +79,7 @@ class CharacterActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyApp(characters: LazyPagingItems<Result>) {
+fun MyApp(characters: LazyPagingItems<Result>, snackbarHostState: SnackbarHostState) {
 
     if (characters.loadState.refresh is LoadState.Loading) {
         Column {
@@ -91,10 +97,10 @@ fun MyApp(characters: LazyPagingItems<Result>) {
         if (error != null){
             error.let {
                 Timber.e(it.error)
-                ErrorScreen()
+                ErrorScreen(modifier = Modifier, snackbarHostState)
             }
         } else {
-            LazyColumn {
+            LazyColumn(state = rememberLazyListState()) {
                 itemsIndexed(characters) { _, character ->
                     character?.let {
                         CharacterCard(character = it)
@@ -217,7 +223,7 @@ fun CharacterCard(modifier: Modifier = Modifier, character: Result) {
 }
 
 @Composable
-fun ErrorScreen(modifier: Modifier = Modifier){
+fun ErrorScreen(modifier: Modifier = Modifier, snackbarHostState: SnackbarHostState){
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -229,15 +235,12 @@ fun ErrorScreen(modifier: Modifier = Modifier){
                 .align(Alignment.Center),
             contentScale = ContentScale.Fit
         )
-        Snackbar(
-            modifier = modifier
-                .padding(10.dp)
-                .align(Alignment.BottomCenter)
-        ) {
-            Text(text = "Something went wrong. Check your internet connection")
+        LaunchedEffect(key1 = 1){
+            snackbarHostState.showSnackbar(
+                message = "Something went wrong. Check your internet connection",
+                duration = SnackbarDuration.Long
+            )
         }
-
-
     }
 
 
@@ -353,7 +356,7 @@ fun DefaultPreview() {
 @Preview(showBackground = true)
 @Composable
 fun ErrorPreview(){
-    ErrorScreen()
+   // ErrorScreen()
 }
 
 @Preview(showBackground = true)
