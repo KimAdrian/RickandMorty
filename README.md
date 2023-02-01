@@ -18,10 +18,14 @@ Min Api Level: 21 [Android 5.0](https://developer.android.com/studio/releases/pl
 
 Build System : [Kotlin KTS](https://developer.android.com/studio/build/migrate-to-kts)
 
+>**Note**: This project has two branches:
+> - [compose-main](https://github.com/KimAdrian/RickandMorty/tree/compose-main) - uses jetpack compose
+> - [xml-main](https://github.com/KimAdrian/RickandMorty/tree/xml-main) - uses xml
+
 ## Screenshots
 
-| <img src="images/splashscreen.jpg"/> | <img src="images/loading_shimmer.jpg"/> | <img src="images/home.jpg"/> |<img src="images/error.jpg"/>|
-|---|---|---|---|
+| <img src="images/splashscreen.jpg"/> | <img src="images/loading_shimmer.jpg"/> | <img src="images/home.jpg"/> | <img src="images/error.jpg"/> |
+|--------------------------------------|-----------------------------------------|------------------------------|-------------------------------|
 
 ## Setup Guide
 
